@@ -115,7 +115,7 @@ header {
 .main__title::after {
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     left: 0;
 
     height: 4px;
@@ -130,7 +130,23 @@ header {
 }
 
 .current {
+    position: relative;
+
     color: var(--primary-color-hover);
+    z-index: 500;
+}
+
+.current::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+
+    height: 4px;
+    width: 100%;
+
+    border-radius: 2px;
+    background-color: var(--primary-color-hover);
 }
 
 .contacts-list {
@@ -416,7 +432,6 @@ header {
     opacity: 0;
     pointer-events: none;
     transform: scaleX(0);
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal__body {
@@ -593,15 +608,13 @@ header {
     background: #F5F4FA;
     border-style: none;
     border-radius: 4px;
-    transform: scaleX(100%);
 
-    transition: var(--primart-transition-color), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--primart-transition-color), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover,
 .button:focus {
     color: #FFFFFF;
-    transform: scaleX(calc(100% + 3px));
     background-color: var(--primary-color-hover);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
@@ -660,6 +673,8 @@ header {
     left: 0;
     top: 0;
 
+    display: flex;
+    align-items: center;
     width: 100%;
     height: 100%;
     transform: translateY(101%);
@@ -671,7 +686,7 @@ header {
 }
 
 .hover-modal__text {
-    padding: 63px 24px;
+    padding: 0 24px;
 
     font-size: 18px;
     line-height: 1.56;
