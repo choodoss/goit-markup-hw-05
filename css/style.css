@@ -126,7 +126,6 @@ header {
 }
 
 .current {
-  position: relative;
   color: var(--primary-color-hover);
   z-index: 500;
 }
