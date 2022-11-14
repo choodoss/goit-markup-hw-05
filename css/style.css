@@ -125,21 +125,13 @@ header {
   transition: var(--primary-transition-opacity), transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.current {
-  color: var(--primary-color-hover);
-  z-index: 500;
+.current.main__title::after {
+  opacity: 1;
+  transform: scaleX(100%);
 }
 
-.current::before {
-  content: "";
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  z-index: 501;
-  height: 4px;
-  width: 100%;
-  border-radius: 2px;
-  background-color: var(--primary-color-hover);
+.current {
+  color: var(--primary-color-hover);
 }
 
 .contacts-list {
@@ -254,7 +246,7 @@ header {
   padding: 0;
   clip: rect(0 0 0 0);
   -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
+  clip-path: inset(50%);
   margin: -1px;
 }
 
@@ -438,6 +430,7 @@ header {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   color: #000000;
+  background-color: inherit;
 }
 
 .modal__close {
@@ -652,6 +645,7 @@ header {
 .example-item__link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+
 .example-item__link:hover .hover-modal__item,
 .example-item__link:focus .hover-modal__item {
   opacity: 1;
